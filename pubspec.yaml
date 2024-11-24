@@ -39,6 +39,7 @@ dependencies:
   fluttertoast: ^8.2.8
   another_flushbar: ^1.12.30
   http: ^1.2.2
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +57,29 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+
+  assets:
+    - assets/
+    - assets/offers/
+    - assets/services/
+    - assets/fonts/
+
+  fonts:
+    - family: Manrope
+      fonts:
+        - asset: assets/fonts/manrope/Manrope-Regular.ttf
+        - asset: assets/fonts/manrope/Manrope-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/manrope/Manrope-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/manrope/Manrope-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/manrope/Manrope-Light.ttf
+          weight: 300
+        - asset: assets/fonts/manrope/Manrope-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/manrope/Manrope-SemiBold.ttf
+          weight: 600
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
