@@ -20,7 +20,7 @@ class ReuseableElevatedbutton extends StatelessWidget {
       padding: padding,
       margin: margin ?? const EdgeInsets.all(2),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(18),
         color: color,
       ),
       child: InkWell(

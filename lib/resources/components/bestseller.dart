@@ -12,26 +12,25 @@ class Bestseller extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical:  12),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: ListView.separated(
           itemCount: _servicesController.bestsellers.length,
-          separatorBuilder: (context, index){
+          separatorBuilder: (context, index) {
             return const SizedBox(height: 10);
           },
           itemBuilder: (context, index) {
             return Container(
               margin: EdgeInsets.all(2),
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(30),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.7),
-                    blurRadius: 1,
-                  )
-                ]
-              ),
-              padding: const EdgeInsets.symmetric(vertical:  12, horizontal: 10),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.7),
+                      blurRadius: 1,
+                    )
+                  ]),
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
               // height: 395,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,19 +64,20 @@ class Bestseller extends StatelessWidget {
                             ),
                             const Expanded(child: SizedBox()),
                             Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  for (int i = 0; i < 5; i++)
-                                    const Icon(
-                                      Icons.star,
-                                      color: Colors.amber,
-                                      size: 16,
-                                    ),
-                                ],
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                for (int i = 0; i < 5; i++)
+                                  const Icon(
+                                    Icons.star,
+                                    color: Colors.amber,
+                                    size: 16,
+                                  ),
+                              ],
                             ),
                             const SizedBox(width: 5),
                             Text(
-                              _servicesController.bestsellers[index].rating.toString(),
+                              _servicesController.bestsellers[index].rating
+                                  .toString(),
                               style: const TextStyle(
                                 fontFamily: "Manrope",
                                 fontSize: 14,
@@ -86,11 +86,16 @@ class Bestseller extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 5,),
+                        const SizedBox(
+                          height: 5,
+                        ),
 
                         //desc row
                         Column(
-                          children: _servicesController.bestsellers[index].services.take(3).map((service){
+                          children: _servicesController
+                              .bestsellers[index].services
+                              .take(3)
+                              .map((service) {
                             return Row(
                               children: [
                                 Text(
@@ -129,7 +134,11 @@ class Bestseller extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Container(width: 1, height: 20, color: Colors.grey,), //TODO: change it to VerticalDivider()
+                            Container(
+                              width: 1,
+                              height: 20,
+                              color: Colors.grey,
+                            ), //TODO: change it to VerticalDivider()
                             const Text(
                               "  45 mins",
                               style: const TextStyle(
@@ -147,10 +156,8 @@ class Bestseller extends StatelessWidget {
                                   boxShadow: [
                                     BoxShadow(
                                         color: Colors.black.withOpacity(0.5),
-                                        blurRadius: 1
-                                    ),
-                                  ]
-                              ),
+                                        blurRadius: 1),
+                                  ]),
                               padding: const EdgeInsets.all(4),
                               child: Image.asset("assets/services/liner.png"),
                             ),

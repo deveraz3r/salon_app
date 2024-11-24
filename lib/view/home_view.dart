@@ -146,7 +146,7 @@ class HomeView extends StatelessWidget {
                   itemCount: _offersController.offers.length,
                   itemBuilder: (context, index) {
                     return ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(18),
                       child: SizedBox(
                         width: 350,
                         child: Stack(children: [
