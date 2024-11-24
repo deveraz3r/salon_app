@@ -3,7 +3,6 @@ import 'package:salon/resources/app_colors.dart';
 import 'package:salon/resources/components/bestseller.dart';
 import 'package:salon/resources/components/reusable_elevated_button.dart';
 import 'package:salon/view_model/offers_viewmodel.dart';
-
 import '../resources/components/services.dart';
 
 class HomeView extends StatelessWidget {
@@ -35,23 +34,29 @@ class HomeView extends StatelessWidget {
           actions: [
             Container(
               decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: Colors.black.withOpacity(0.2),
-                  width: 2,
-                )
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black.withOpacity(0.5),
+                        blurRadius: 1
+                    ),
+                  ]
               ),
               padding: const EdgeInsets.all(4),
               child: const Icon(Icons.search),
             ),
-            const SizedBox(width: 5,),
+            const SizedBox(width: 8,),
             Container(
               decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Colors.black.withOpacity(0.2),
-                    width: 2,
-                  )
+                shape: BoxShape.circle,
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.5),
+                    blurRadius: 1
+                  ),
+                ]
               ),
               padding: const EdgeInsets.all(4),
               child: const Icon(Icons.share),
@@ -107,13 +112,22 @@ class HomeView extends StatelessWidget {
                                   size: 22,
                                 ),
                               Text(
-                                "(10k Bookings)",
+                                "4.5 ",
+                                style: const TextStyle(
+                                  fontFamily: "Manrope",
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                              ),
+                              Text(
+                                " (10k Bookings)",
                                 style: TextStyle(
                                     fontWeight: FontWeight.w400,
                                     fontFamily: 'Manrope',
                                     fontSize: 14),
                               )
-                            ]),
+                            ],
+                        ),
                         const SizedBox(width: 10),
                       ],
                     )
@@ -134,7 +148,7 @@ class HomeView extends StatelessWidget {
                     return ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: SizedBox(
-                        width: 400,
+                        width: 350,
                         child: Stack(children: [
                           Container(
                             color: AppColors.primaryColor,
@@ -190,7 +204,6 @@ class HomeView extends StatelessWidget {
                                 ReuseableElevatedbutton(
                                   onPressed: () {},
                                   width: 120,
-                                  color: Colors.black,
                                   buttonName: ("Book Now"),
                                 ),
                               ],
@@ -232,7 +245,7 @@ class HomeView extends StatelessWidget {
                   ),
                   Tab(
                     child: Text(
-                      "Services",
+                      "Packages",
                       style: TextStyle(
                         fontFamily: "Manrope",
                         fontSize: 18,
@@ -246,8 +259,8 @@ class HomeView extends StatelessWidget {
                 child: TabBarView(
                   children: [
                     Services(),
-                    const Center(child: Text('Offers Tab Content')),
-                    const Center(child: Text('Tab Content')),
+                    Bestseller(),
+                    const Center(child: Text('Packages Tab Content')),
                   ],
                 ),
               ),

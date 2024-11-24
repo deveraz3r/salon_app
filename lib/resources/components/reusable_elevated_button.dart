@@ -2,7 +2,7 @@ import './../../utils/app_urls.dart';
 
 class ReuseableElevatedbutton extends StatelessWidget {
   const ReuseableElevatedbutton(
-      {super.key, required this.buttonName, this.onPressed, this.width = double.infinity, this.color = AppColors.primaryColor, this.margin, this.textColor = Colors.white, this.padding});
+      {super.key, required this.buttonName, this.onPressed, this.width = double.infinity, this.color = Colors.black, this.margin, this.textColor = Colors.white, this.padding});
 
   final String buttonName;
   final VoidCallback? onPressed;
