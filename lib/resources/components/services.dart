@@ -35,7 +35,7 @@ class Services extends StatelessWidget {
                     style: const TextStyle(
                       fontFamily: "Manrope",
                       fontSize: 18,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 ],

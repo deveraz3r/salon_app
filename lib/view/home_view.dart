@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:salon/resources/app_colors.dart';
+import 'package:salon/resources/components/bestseller.dart';
 import 'package:salon/resources/components/reusable_elevated_button.dart';
+import 'package:salon/view_model/offers_viewmodel.dart';
 
 import '../resources/components/services.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+  HomeView({super.key});
 
-  final int off = 25;
+  final OffersViewmodel _offersController = OffersViewmodel();
 
   @override
   Widget build(BuildContext context) {
@@ -127,7 +129,7 @@ class HomeView extends StatelessWidget {
                 height: 180,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 3,
+                  itemCount: _offersController.offers.length,
                   itemBuilder: (context, index) {
                     return ClipRRect(
                       borderRadius: BorderRadius.circular(10),
@@ -135,12 +137,14 @@ class HomeView extends StatelessWidget {
                         width: 400,
                         child: Stack(children: [
                           Container(
+                            color: AppColors.primaryColor,
+                            //TODO: uncomment after getting offers image
                             // child: Image.asset(
-                            //   "assets/offers/Child.jpg", //TODO: replace with offer image
+                            //   "_offersController.offers[index].image",
                             //   width: double.infinity,
+                            //   height: double.infinity,
                             //   fit: BoxFit.cover,
                             // ),
-                            color: AppColors.primaryColor,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(15.0),
@@ -152,11 +156,11 @@ class HomeView extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
                                     Text(
-                                      "$off %",
+                                      "${_offersController.offers[index].discount}%",
                                       style: const TextStyle(
                                         fontFamily: 'Manrope',
                                         fontSize: 26,
-                                        fontWeight: FontWeight.bold,
+                                        fontWeight: FontWeight.w900,
                                       ),
                                     ),
                                     const SizedBox(width: 5),
@@ -175,7 +179,7 @@ class HomeView extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 5),
                                 Text(
-                                  "Save $off% on your booking",
+                                  "Save ${_offersController.offers[index].discount} % on your booking",
                                   style: const TextStyle(
                                     fontFamily: 'Manrope',
                                     fontSize: 16,
@@ -205,7 +209,6 @@ class HomeView extends StatelessWidget {
 
               // Tab-bar view
               const TabBar(
-                indicator: null,
                 tabs: [
                   Tab(
                     child: Text(
@@ -213,7 +216,7 @@ class HomeView extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: "Manrope",
                         fontSize: 18,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
@@ -223,7 +226,7 @@ class HomeView extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: "Manrope",
                         fontSize: 18,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
@@ -233,7 +236,7 @@ class HomeView extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: "Manrope",
                         fontSize: 18,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
@@ -243,7 +246,7 @@ class HomeView extends StatelessWidget {
                 child: TabBarView(
                   children: [
                     Services(),
-                    const Center(child: Text('Best-Selling Tab Content')),
+                    const Center(child: Text('Offers Tab Content')),
                     const Center(child: Text('Tab Content')),
                   ],
                 ),
