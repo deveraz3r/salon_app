@@ -7,7 +7,6 @@ import '../resources/components/services.dart';
 class HomeView extends StatelessWidget {
   HomeView({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

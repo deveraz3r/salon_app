@@ -9,7 +9,7 @@ class HowItWorks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.symmetric(vertical:  8),
       child: Column(
         children: _detailsViewmodel.howItWorksSteps.map((index) {
           final step = index;
@@ -31,17 +31,18 @@ class HowItWorks extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const SizedBox(height: 5),
                   Text(step.title,
                       style: const TextStyle(
                           fontFamily: "Manrope",
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 5),
                   Text(step.desc,
                       style: const TextStyle(
                           fontFamily: "Manrope",
                           fontWeight: FontWeight.w400,
-                          fontSize: 14)),
+                          fontSize: 16)),
                   const SizedBox(height: 10),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
