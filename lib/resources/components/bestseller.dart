@@ -19,6 +19,7 @@ class Bestseller extends StatelessWidget {
             return const SizedBox(height: 10);
           },
           itemBuilder: (context, index) {
+            //TODO: add videos tab in best-seller
             return Container(
               margin: EdgeInsets.all(2),
               decoration: BoxDecoration(

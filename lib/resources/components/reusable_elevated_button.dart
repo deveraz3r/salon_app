@@ -16,7 +16,7 @@ class ReuseableElevatedbutton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      height: 35,
+      height: 40,
       padding: padding,
       margin: margin ?? const EdgeInsets.all(2),
       decoration: BoxDecoration(

@@ -20,6 +20,9 @@ export 'package:salon/utils/routes/routes.dart';
 
 //views
 export 'package:salon/view/home_view.dart';
+export 'package:salon/view/bottom_navbar_view.dart';
+export 'package:salon/view/services_category_view.dart';
+export 'package:salon/view/services_details_view.dart';
 
 //view_model
 

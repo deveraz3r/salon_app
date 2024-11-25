@@ -25,8 +25,8 @@ class _BottomNavbarViewState extends State<BottomNavbarView> {
       extendBody: true,
       bottomNavigationBar: AnimatedNotchBottomBar(
         notchBottomBarController: _controller,
-        bottomBarItems: [
-          const BottomBarItem(
+        bottomBarItems: const [
+          BottomBarItem(
             inActiveItem: Icon(
               Icons.home_filled,
               color: AppColors.amberColor,
@@ -37,7 +37,7 @@ class _BottomNavbarViewState extends State<BottomNavbarView> {
             ),
             itemLabel: 'Home',
           ),
-          const BottomBarItem(
+          BottomBarItem(
             inActiveItem: Icon(Icons.star, color: AppColors.amberColor),
             activeItem: Icon(
               Icons.star,
@@ -45,7 +45,7 @@ class _BottomNavbarViewState extends State<BottomNavbarView> {
             ),
             itemLabel: 'Services',
           ),
-          const BottomBarItem(
+          BottomBarItem(
             inActiveItem: Icon(
               Icons.settings,
               color: AppColors.amberColor,
@@ -57,7 +57,7 @@ class _BottomNavbarViewState extends State<BottomNavbarView> {
             itemLabel: 'Page 3',
           ),
           BottomBarItem(
-            inActiveItem: const Icon(
+            inActiveItem: Icon(
               Icons.person,
               color: AppColors.amberColor,
             ),
