@@ -66,6 +66,7 @@ flutter:
     - assets/fonts/
     - assets/service_details/
     - assets/service_details/overview/
+    - assets/service_details/how_it_works/
 
   fonts:
     - family: Manrope
