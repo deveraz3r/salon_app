@@ -25,7 +25,7 @@ class ReuseableElevatedbutton extends StatelessWidget {
       ),
       child: InkWell(
         onTap: onPressed ?? () {},
-        child: Center(child: Text(buttonName, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: textColor),))
+        child: Center(child: Text(buttonName, style: TextStyle(fontFamily: "Manrope", fontSize: 16, fontWeight: FontWeight.w500, color: textColor),))
       ),
     );
   }

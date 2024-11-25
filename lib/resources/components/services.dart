@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salon/view_model/services_viewmodel.dart';
+import 'package:salon/view_model/services/services_viewmodel.dart';
 
 class Services extends StatelessWidget {
   Services({super.key});

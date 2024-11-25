@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:salon/resources/app_colors.dart';
 import 'package:salon/resources/components/reusable_elevated_button.dart';
-import 'package:salon/view_model/bestseller_viewmodel.dart';
+import 'package:salon/view_model/services/bestseller_viewmodel.dart';
 
 class Bestseller extends StatelessWidget {
   Bestseller({super.key});
@@ -54,15 +54,18 @@ class Bestseller extends StatelessWidget {
                         //name and rating row
                         Row(
                           children: [
-                            Text(
-                              _servicesController.bestsellers[index].title,
-                              style: const TextStyle(
-                                fontFamily: "Manrope",
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Text(
+                                _servicesController.bestsellers[index].title,
+                                style: const TextStyle(
+                                  fontFamily: "Manrope",
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
-                            const Expanded(child: SizedBox()),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -108,20 +111,23 @@ class Bestseller extends StatelessWidget {
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                 ),
-                                Text(
-                                  "  ${service.title}",
-                                  style: const TextStyle(
-                                    fontFamily: "Manrope",
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w500,
+                                Flexible(
+                                  child: Text(
+                                    "  ${service.desc}",
+                                    style: const TextStyle(
+                                      fontFamily: "Manrope",
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ],
                             );
                           }).toList(),
                         ),
+                        const SizedBox(height: 5),
 
                         //price row
                         Row(
@@ -165,7 +171,7 @@ class Bestseller extends StatelessWidget {
                             ReuseableElevatedbutton(
                               onPressed: () {},
                               width: 120,
-                              buttonName: ("Book Now"),
+                              buttonName: ("Book now"),
                             ),
                           ],
                         )
